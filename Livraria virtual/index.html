@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSL & Co </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <section>
+        <a href="#"><img src="/imagens/logo.png" width="100px" height="100px" alt=""></a>
+
+        <nav class="barraDeNav">
+            <a href="#home">Home</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#menu">Destaques</a>
+            <a href="#livros">Livros</a>
+        </nav>
+
+        <div class="icones">
+            <img width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADZklEQVR4nO1ZTU8UQRBtD+rVi0L8OKg/wQN+/wUTRQNiYtQfYIIYCYnoDfgDJp7UgwnZeFAxJCpTvYAXFW6ekOna9SieMKIy1ZapmZ5l/YCwbM8sbPYlk0yys6/7TVdVV79RqoUWNh80cnuAdFWjfaQNzWpDXwBp2V0L2tBM/BvSlYmQ29RmQ2D4NKAdA0ORRsvrueRZQPu8GPKpRs9fBWU+DMaOVyZoiDTSJCD1guGOl/O8Z2aGt8sl9xr5KCDdAKSp5Nn0f/bF6zIfaogIKFEPIH11Ar6BsUNTc7x7vf9PhNlhMLQUrxDSokbqVnkCDA1WhcnoxCfet1EuPcf7AW2halVv+53tKtBo77oY/yX3zLxNeQAYug6GbC5ioEQ9ToTVYdTpm79o6HxFDFKXyiyxXU6AoVvZrTj1pzkzWeKD3geoqk6jKkNIqKY5A2jHvO8TbiWWJj/yAZUxpHhIJdTy4kI+6Y1Y3kwixA6pnCClWScR8MwTIbfHO7YhqmWfqBfxPmOIpL2R+7oJoUTXXBUpeplhLWMjTbuQvlw3WdLkxVWk18vsahnbUJ8L6Qc+yGYTMu5QOSMo8XH3Et/VTSatuJDlmR8pJkJuc0I+102mkX4KWeED71A5Y3yOd7r8/NEUQgBpsSlCSxua95bscihSOQNKfMKtyHRTlF+N9n7dZM5MECFTKmdoQ29k7ACjs17iNG1RvLQKtbYoRgwN3uWFVNwOt8TDKidotCOulS94Iy0iH3M9z/e823go8xGv5JVWHm3B1zn9fxBubewTFwFPvQ8gx87Esol32n6VEQBpwBWXhVdl3pvJIOI7peaDGAW++QNDF1LzAUx0RmUJsWoqTgpSv48wS87pNLAigqw4NiprpGLSnBGTbaNcUjyqcmLlMkQB0kWVNcR3SnPG2Z7DtewzzjIdkUpYsUyr/eAVL7k7WyWVApBUs3RgZ1D3yaFINlPpmuWS+/igZOhmfIT9c9KjktiyAg0TIxDLRtyOWj4rxMcDYx//3YyuIaZL5QUJFzEKNNqHgPQ+/rgTT1g2NyprpLdg7D2Z1FrHgrg6NlqMZx84+kdMSJdUs4iBPEqzbxSbSYwOo86mFxPksWlmIgZpuSVmKxQAMDSotiKgFJ1LwwwM3VFbGTqMOnP7nN1CCyrGbzLtKBM80eJFAAAAAElFTkSuQmCC">
+            <img width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACn0lEQVR4nO2ZvWtUQRDAxw9QBGsVtBHU+AEiwca/QBFbO0VQEUVEAoJd/gILQbCwsRCjMVFUPIvkdt6htY1FMN6buVODRgwasRBuNiP77hlSnCdndvfdC/5guze8/e3O7AcL8J8+wzRaR5HkA7LVPzVD8hVZalWSk6q6CvoRw/K+m0SHdrsvZcwSEcPyrtM3k6luMg05jSQ/3HduZqDfSLh1xMk4CeTW4W7fYipn8lR7BWWmMq3rkORLNitN3QtlBsneyVIxlYtQZpDkbLue7AMoMxOp7swXhs99uXr1ApLMOJnJhu6BMmPI3s1n5QKUGUNyLt977kOZQdaBtojMrpg6QdYBKDPI9l6PZzTvzZCgBxE5X7QIktSXLeKW3qJFDMnwskVckSPLpwIlFiaauh184I4pxaWVrYIv3MGxwPo44U+krvuKEZH5JzO6wZtIXiez0euD7S3wDZIdjy1Sbegh7yKG5FLktHoT5FhUJd0fWeQqhCCrk/weH7w2SGztrW6DUBiyj+KI2OcQEmS5HEOkSnI8qEjCeiC4CMkcsq4PKjKsurr9o5Ai9gbEANk+DlofTR2MImJYhoJJsLyOIpGJNHUwoMhQNJFR1TXtdxTPEiQtZN0MMTFsn3qWWEC21yE2SHKl3QF7E8pMkurBfCSnoMwg6lp36XEpUWvoFigzZrFO5BSshPcTZKlBmXk5pRsXj/VkryWsu4OfkUKRpK1jyPLT44b4omAZT3sKieC0bi320ZTsM9cJ1wzZSr7PjHSKMWRHeo0JjiH5mHVqyUi6a2o+wnOdYvD3VaBTDMs8FIFh+d6lU998xQTHkH2Yp0TFdcY1d+fOU2fMV0xwqqS7Ot4aSeaSuu7wFQMxyIqV7ajL76yRHftbh/4lxvEL0txR06UQiJUAAAAASUVORK5CYII=">
+            
+        </section>
+    </header>
+
+        <div class="bloco-home">
+            <section id="home">
+                <div class="conteudo">
+                    <h3>Confira os melhores livros por aqui</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore voluptates nam inventore laborum doloribus? Blanditiis, quae commodi? Molestias iste quidem tempore perferendis illo eius, tempora facere magnam quasi fuga vitae!</p>
+                    <a href="#" class="botao">Confira nossos livros</a>
+                </div>
+            </section>
+        </div>
+
+        <section class="bloco-sobre" id="sobre">
+            <h2 class="titulo">Sobre <span>nós</span></h2>
+            <div class="row">
+                <div class="conteudo-imagem">
+                    <img src="imagens/sobreImg.jpeg" alt="">
+                </div>
+                <div class="conteudo">
+                    <h3>O que faz nossa livraria ser especial</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt aperiam possimus dolores et! Voluptatem consectetur maiores quia nesciunt qui nobis natus, culpa aspernatur optio minima deserunt ullam at possimus ut.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas cumque repudiandae sint cupiditate sit, sequi sapiente esse asperiores obcaecati animi laborum hic aspernatur quisquam aperiam aliquid eligendi quo, magni numquam?</p>
+                    <a href="#" class="botao">saiba mais</a>
+                </div>
+            </div>
+        </section>
+        <section class="menu" id="menu">
+            <h2 class="titulo">Nossos Livros <span>em Destaque</span></h2>
+            <div class="cards">
+                <div class="caixa">
+                    <img src="imagens/livro1.jpg" alt="">
+                    <h3>Senhor dos Aneis</h3>
+                    <div class="preco">R$ 79,99</div>
+                    <a href="#" class="botao">Adicionar ao carrinho</a>
+                </div>
+                <div class="caixa">
+                    <img src="imagens/livro1.jpg" alt="">
+                    <h3>Senhor dos Aneis</h3>
+                    <div class="preco">R$ 79,99</div>
+                    <a href="#" class="botao">Adicionar ao carrinho</a>
+                </div>
+                <div class="caixa">
+                    <img src="imagens/livro1.jpg" alt="">
+                    <h3>Senhor dos Aneis</h3>
+                    <div class="preco">R$ 79,99</div>
+                    <a href="#" class="botao">Adicionar ao carrinho</a>
+                </div>
+                <div class="caixa">
+                    <img src="imagens/livro1.jpg" alt="">
+                    <h3>Senhor dos Aneis</h3>
+                    <div class="preco">R$ 79,99</div>
+                    <a href="#" class="botao">Adicionar ao carrinho</a>
+                </div>
+                <div class="caixa">
+                    <img src="imagens/livro1.jpg" alt="">
+                    <h3>Senhor dos Aneis</h3>
+                    <div class="preco">R$ 79,99</div>
+                    <a href="#" class="botao">Adicionar ao carrinho</a>
+                </div>
+                <div class="caixa">
+                    <img src="imagens/livro1.jpg" alt="">
+                    <h3>Senhor dos Aneis</h3>
+                    <div class="preco">R$ 79,99</div>
+                    <a href="#" class="botao">Adicionar ao carrinho</a>
+                </div>
+            </div>
+        </section>
+        <section class="bloco-loja" id="livros">
+            <h2 class="titulo">Nossa <span>Loja</span></h2>
+            <div class="conteudo">
+                <div class="card-loja">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi nesciunt quis, facere eos aperiam at suscipit iste aspernatur laborum rerum est ab magnam atque impedit beatae veniam accusantium quibusdam asperiores.</p>
+                    <a href="#" class="botao">Acessar Loja</a>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="descricao-footer">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam excepturi nobis nemo accusantium accusamus recusandae pariatur eius voluptate debitis. Esse tempore velit quia libero laborum facilis beatae eos ratione maiores.</p>
+            </div>
+            <div class="contato-footer">
+                <p>email@email.com</p>
+                <p>(11) 98765-4321</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 copyright: SSL livraria</p>
+            </div>
+            
+        </footer>
+</body>
+</html>
